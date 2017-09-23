@@ -4,36 +4,77 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Açaí na Tígela</title>
+        <title>Minha Saúde</title>
         <meta  charset="utf-8">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        
     </head>
     <body>
-      
         <div>
+            <h1>Cadastro de Pacientes</h1>
 
-            <h1>Primeira Pagina em HTML</h1>
-            <h2>Sub titulo HTML</h2>
+            <div class="jumbotron">
+              <div class="container">
+               <h2>Preencha os campos abaixo</h2>
+              </div><!-- fim .container dentro do jumbotron -->
+            </div><!-- fim .jumbotron -->
 
+            <div class="panel panel-default">
+              <div class="form-group">
+                <form class=".form-horizontal" action="javascript:void(0);" method="POST">
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+        
+                  <label for="nome">Nome:</label>
+                  <input class="form-control" type="text" name="nome" id="nome"><br />
+                  <label for="nascimento">Nascimento:</label>
+                  <input class="form-control" type="date" name="nascimento" id="nascimento"> <br />
+                  <label for="nome">CPF:</label>
+                  <input class="form-control" type="text" name="cpf" id="cpf"> <br />
+                  <label for="rg">RG:</label>
+                  <input class="form-control" type="text" name="rg" id="rg"> <br /> 
+                    
+                </fieldset>    
+                                        
+                  <label for="cidade">Cidade:</label>
+                    <select class="form-control" multiple name="cidades">
+                      <option value="rj">Anápolis</option> 
+                      <option value="bsb">Brasília</option>
+                      <option value="sp">Goiânia</option>
+                    </select> <br />       
 
-            <p>
-              Conteudo do Projeto
-            </p>
+                    <label for="endereco">Endereço:</label>
+                    <select class="form-control" name="bairro">
 
+                     <optgroup label="Anápolis">
+                        <option value="vlmariana_sp">Vila Mariana</option>
+                        <option value="centro_apl">Centro</option>
+                      </optgroup>
+                      <optgroup label="Brasília">
+                        <option value="asan_bsb">Asa Norte</option>
+                        <option value="asas_bsb">Asa Sul</option>
+                      </optgroup>
+                      <optgroup label="Goiânia">
+                        <option value="universitario_go">Universitário</option>
+                        <option value="centro_go">Centro</option>
+                      </optgroup>
+                    </select> <br />
+                    
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-default">Enviar</button>
+                  </div>
+                </form>
 
-            <h3>Primeiro Topico</h3>
-            <p>
-                Primeiro Topico
-            </p>
-
-        </div>
-            
-
-            <ul>
-                <li>Primeiro</li>
-                <li>Segundo</li>
-            </ul>
-
+              </div>
+              <div class="panel-body">
+              </div><!-- fim .panel-body -->
+            </div><!-- fim .panel -->
+        <div class="container">
+        </div><!-- fim .container da pagina -->
     </body>
 </html>
 
