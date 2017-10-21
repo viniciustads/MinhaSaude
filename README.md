@@ -6,8 +6,10 @@ Implementação de “portal” para edição de identificadores de indivíduos 
 
 Equipe: Danilo, Claudio, Vinicius 
 
-Baixar as dependências 
+1. Baixar o projeto.
+
+2. Baixar as dependências 
 `npm install`
 
-Transpilar o javascript
+3. Transpilar o javascript
 `npm run build`
