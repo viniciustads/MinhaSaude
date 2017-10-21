@@ -8,42 +8,51 @@ class App extends React.Component {
     }
 }
 
-class ListaDeUF extends React.Component {
-  render() {
-    return (      
-        <select className="listaUF">
-            <option value="">Selecione</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espirito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        </select>
-    );
-  }
+function ItemUF(props) {
+  return <option value={props.value.id}>{props.value.text}</option>;
 }
 
+function ListaDeUFs(props) {
+  const ufs = props.ufs;
+  return (
+    <select>
+      {ufs.map((uf) =>
+        <ItemUF key={uf.id}
+                  value={uf} />
+      )}
+    </select>
+  );
+}
+
+const ufs = [
+    { id: 'AC', text: 'Acre' },
+    { id: 'AL', text:  'Alagoas' },
+    { id: 'AP', text:  'Amapá' },
+    { id: 'AM', text:  'Amazonas' },
+    { id: 'BA', text:  'Bahia' },
+    { id: 'CE', text:  'Ceará' },
+    { id: 'DF', text:  'Distrito Federal' },
+    { id: 'ES', text:  'Espirito Santo' },
+    { id: 'GO', text:  'Goiás' },
+    { id: 'MA', text:  'Maranhão' },
+    { id: 'MS', text:  'Mato Grosso do Sul' },
+    { id: 'MT', text:  'Mato Grosso' },
+    { id: 'MG', text:  'Minas Gerais' },
+    { id: 'PA', text:  'Pará' },
+    { id: 'PB', text:  'Paraíba' },
+    { id: 'PR', text:  'Paraná' },
+    { id: 'PE', text:  'Pernambuco' },
+    { id: 'PI', text:  'Piauí' },
+    { id: 'RJ', text:  'Rio de Janeiro' },
+    { id: 'RN', text:  'Rio Grande do Norte' },
+    { id: 'RS', text:  'Rio Grande do Sul' },
+    { id: 'RO', text:  'Rondônia' },
+    { id: 'RR', text:  'Roraima' },
+    { id: 'SC', text:  'Santa Catarina' },
+    { id: 'SP', text:  'São Paulo' },
+    { id: 'SE', text:  'Sergipe' },
+    { id: 'TO', text:  'Tocantins' }
+];
+
 render(<App/>, document.getElementById('app'));
-render(<ListaDeUF/>, document.getElementById('listaDeUF'));
+render(<ListaDeUFs ufs={ufs} />, document.getElementById('listaDeUF'));
