@@ -8,17 +8,17 @@ class App extends React.Component {
     }
 }
 
-function ItemUF(props) {
+function ItemDeLista(props) {
   return <option value={props.value.id}>{props.value.text}</option>;
 }
 
-function ListaDeUFs(props) {
-  const ufs = props.ufs;
+function ListaDeElementos(props) {
+  const lista = props.lista;
   return (
     <select>
-      {ufs.map((uf) =>
-        <ItemUF key={uf.id}
-                  value={uf} />
+      {lista.map((elemento) =>
+        <ItemDeLista key={elemento.id}
+                  value={elemento} />
       )}
     </select>
   );
@@ -55,4 +55,4 @@ const ufs = [
 ];
 
 render(<App/>, document.getElementById('app'));
-render(<ListaDeUFs ufs={ufs} />, document.getElementById('listaDeUF'));
+render(<ListaDeElementos lista={ufs} />, document.getElementById('listaDeUF'));
