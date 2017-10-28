@@ -9,23 +9,21 @@ class Banner extends React.Component {
     }
 }
 
-class MenuPrincipal extends React.Component {
-  render() {
-    return <Navbar>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <a href="./index.html">Minha Saúde</a>
-        </Navbar.Brand>
-      </Navbar.Header>
-      <Nav>
-        <NavItem eventKey={1} href="#">Identificadores</NavItem>
-        <NavItem eventKey={2} href="#">Nomes</NavItem>
-        <NavItem eventKey={3} href="#">Dados demográficos</NavItem>
-        <NavItem eventKey={4} href="#">Endereços</NavItem>
-      </Nav>
-    </Navbar>
-  }
-}
+const MenuPrincipal = (
+  <Navbar>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="./index.html">Minha Saúde</a>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav>
+      <NavItem eventKey={1} href="#">Identificadores</NavItem>
+      <NavItem eventKey={2} href="#">Nomes</NavItem>
+      <NavItem eventKey={3} href="#">Dados demográficos</NavItem>
+      <NavItem eventKey={4} href="#">Endereços</NavItem>
+    </Nav>
+  </Navbar>  
+)
 
 const ufs = [
     { value: 'AC', label: 'Acre' },
@@ -58,4 +56,4 @@ const ufs = [
 ];
 
 render(<Banner/>, document.getElementsByTagName('header')[0]);
-render(<MenuPrincipal/>, document.getElementById('menuPrincipal'));
+render(MenuPrincipal, document.getElementById('menuPrincipal'));
