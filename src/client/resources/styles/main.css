@@ -1,10 +1,6 @@
 body div, header
 {
     max-width: 960px;
-}
-
-header
-{
     margin: auto;
 }
 
