@@ -1,28 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Button } from 'react-bootstrap';
 import Select from 'react-select';
 
-class App extends React.Component {
+class Banner extends React.Component {
     render(){
-        return <Button>default</Button>
+        return <img src="./resources/img/banner.jpg" width="100%" />
     }
-}
-
-function ItemDeLista(props) {
-  return <option value={props.value.id}>{props.value.text}</option>;
-}
-
-function ListaDeElementos(props) {
-  const lista = props.lista;
-  return (
-    <select>
-      {lista.map((elemento) =>
-        <ItemDeLista key={elemento.id}
-                  value={elemento} />
-      )}
-    </select>
-  );
 }
 
 const ufs = [
@@ -55,5 +38,4 @@ const ufs = [
     { value: 'TO', label:  'Tocantins' }
 ];
 
-render(<App/>, document.getElementById('app'));
-render(<Select name="lista-ufs" id="ufs" options={ufs} />, document.getElementById('listaDeUF'));
+render(<Banner/>, document.getElementsByTagName('header')[0]);
