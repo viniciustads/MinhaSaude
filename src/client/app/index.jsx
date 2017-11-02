@@ -1,6 +1,5 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Select from 'react-select';
 import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
 import {DadosGeraisDoIdentificador, Certidao, CTPS, TituloDeEleitor} from './identificadores'
 

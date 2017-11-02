@@ -1,3 +1,24 @@
+export const TiposDeIdentificador = [
+    { value: '01', label: 'Único dentro da organização' },
+    { value: '02', label: 'Número do prontuário' },
+    { value: '21', label: 'Radiologia' },
+    { value: '22', label: 'Patologia' },
+    { value: '23', label: 'Farmácia' }
+];
+
+export const AreaGeografica = [
+    { value: '1', label: 'Local' },
+    { value: '2', label: 'Área/região/distrito' },
+    { value: '3', label: 'Estado/província/território' },
+    { value: '4', label: 'Nacional' }
+];
+
+export const Certidoes = [
+    { value: 'nascimento', label: 'Nascimento' },
+    { value: 'casamento', label: 'Casamento' },
+    { value: 'divorcio', label: 'Divórcio' }
+];
+
 export const ListaDeUFs = [
     { value: 'AC', label: 'Acre' },
     { value: 'AL', label:  'Alagoas' },
