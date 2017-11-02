@@ -139,15 +139,20 @@ export class CTPS extends React.Component {
 export class TituloDeEleitor extends React.Component {
     render() {
     return <Panel header="Título de Eleitor">        
+        <FormGroup controlId="SecaoTitulo" className="col-sm-6">      
             <Col sm={12}>
+                <label>Seção</label>
             </Col>
             <Col sm={12}>
                 <FormControl componentClass="input" maxLength="25" />
             </Col>
         </FormGroup>
+        <FormGroup controlId="ZonaTitulo" className="col-sm-6">      
             <Col sm={12}>
+                <label>Zona</label>
             </Col>
             <Col sm={12}>
+                <FormControl componentClass="input" maxLength="25" />
             </Col>
         </FormGroup>
         </Panel>
