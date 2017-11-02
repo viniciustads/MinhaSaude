@@ -15,7 +15,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                 <label>Tipo do identificador</label>
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" placeholder="select">
+                    <FormControl componentClass="select" required>
                         <ListaDeElementos lista={TiposDeIdentificador} />
                     </FormControl>
                 </Col>
@@ -25,7 +25,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Área geográfica</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" placeholder="select">
+                    <FormControl componentClass="select" required>
                         <ListaDeElementos lista={AreaGeografica} />
                     </FormControl>
                 </Col>
@@ -35,7 +35,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Designação</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" maxLength="25" />
+                    <FormControl componentClass="input" required maxLength="25" />
                 </Col>
             </FormGroup>
             <FormGroup controlId="DataIdentificador" className="col-sm-6">
@@ -43,7 +43,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Data</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" type="date" />
+                    <FormControl componentClass="input" required type="date" />
                 </Col>
             </FormGroup>
             <FormGroup controlId="Emissor" className="col-sm-6">
@@ -51,7 +51,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Emissor</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" maxLength="25" />
+                    <FormControl componentClass="input" required maxLength="25" />
                 </Col>
             </FormGroup>
         </Panel>
