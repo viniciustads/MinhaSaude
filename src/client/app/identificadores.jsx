@@ -1,10 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Select from 'react-select';
 import {Col, ControlLabel, FormControl, FormGroup, Panel} from 'react-bootstrap';
-import {TiposDeIdentificador, AreaGeografica, Certidoes, ListaDeUFs} from './listas'
+import {ListaDeElementos, TiposDeIdentificador, AreaGeografica, Certidoes, ListaDeUFs} from './listas'
 
 export class DadosGeraisDoIdentificador extends React.Component {
+    updateState(element) {
+        this.setState({value: element});
+    }
+
     render() {
         return <Panel>
             <FormGroup controlId="TipoDoIdentificador" className="col-sm-6">      
@@ -12,7 +15,9 @@ export class DadosGeraisDoIdentificador extends React.Component {
                 <label>Tipo do identificador</label>
                 </Col>
                 <Col sm={12}>
-                    <Select name="TipoDoIdentificador" searchable={false} id="TipoDoIdentificador" options={TiposDeIdentificador} />
+                    <FormControl componentClass="select" placeholder="select">
+                        <ListaDeElementos lista={TiposDeIdentificador} />
+                    </FormControl>
                 </Col>
             </FormGroup>
             <FormGroup controlId="AreaGeografica" className="col-sm-6">
@@ -20,7 +25,9 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Área geográfica</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <Select name="AreaGeografica" searchable={false} id="AreaGeografica" options={AreaGeografica} />
+                    <FormControl componentClass="select" placeholder="select">
+                        <ListaDeElementos lista={AreaGeografica} />
+                    </FormControl>
                 </Col>
             </FormGroup>
             <FormGroup controlId="Designacao" className="col-sm-6">
@@ -59,7 +66,9 @@ export class Certidao extends React.Component {
                 <label>Tipo de certidão</label>
             </Col>
             <Col sm={12}>
-                <Select name="TipoDeCertidao" searchable={false} id="TipoDeCertidao" options={Certidoes} />            
+                <FormControl componentClass="select" placeholder="select">
+                    <ListaDeElementos lista={Certidoes} />
+                </FormControl>           
             </Col>
         </FormGroup>
         <FormGroup controlId="NomeDoCartorio" className="col-sm-12">
@@ -114,7 +123,9 @@ export class CTPS extends React.Component {
                 <label>Estado</label>
             </Col>
             <Col sm={12}>
-                <Select name="EstadoCTPS" id="EstadoCTPS" options={ListaDeUFs} />
+                <FormControl componentClass="select" placeholder="select">
+                    <ListaDeElementos lista={ListaDeUFs} />
+                </FormControl>
             </Col>
         </FormGroup>
         </Panel>

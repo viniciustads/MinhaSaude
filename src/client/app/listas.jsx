@@ -1,3 +1,19 @@
+import React from 'react';
+
+export function ItemDeLista(props) {
+    return <option value={props.value.value}>{props.value.label}</option>;
+}
+
+export function ListaDeElementos(props) {
+    const lista = props.lista;
+    return (
+      lista.map((elemento) =>
+            <ItemDeLista key={elemento.value}
+                      value={elemento} />
+            )
+    );
+}
+
 export const TiposDeIdentificador = [
     { value: '01', label: 'Único dentro da organização' },
     { value: '02', label: 'Número do prontuário' },
