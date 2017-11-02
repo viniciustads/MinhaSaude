@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Select from 'react-select';
-import {Col, Button, ControlLabel, Form, FormControl, FormGroup, MenuItem, Nav, Navbar, NavItem, NavDropdown, Panel} from 'react-bootstrap';
-import { DadosGeraisDoIdentificador, Certidao } from './identificadores.jsx'
+import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
+import {DadosGeraisDoIdentificador, Certidao, CTPS, TituloDeEleitor} from './identificadores'
 
 class Banner extends React.Component {
     render(){
@@ -26,41 +26,13 @@ const MenuPrincipal = (
   </Navbar>  
 )
 
-const ufs = [
-    { value: 'AC', label: 'Acre' },
-    { value: 'AL', label:  'Alagoas' },
-    { value: 'AP', label:  'Amapá' },
-    { value: 'AM', label:  'Amazonas' },
-    { value: 'BA', label:  'Bahia' },
-    { value: 'CE', label:  'Ceará' },
-    { value: 'DF', label:  'Distrito Federal' },
-    { value: 'ES', label:  'Espirito Santo' },
-    { value: 'GO', label:  'Goiás' },
-    { value: 'MA', label:  'Maranhão' },
-    { value: 'MS', label:  'Mato Grosso do Sul' },
-    { value: 'MT', label:  'Mato Grosso' },
-    { value: 'MG', label:  'Minas Gerais' },
-    { value: 'PA', label:  'Pará' },
-    { value: 'PB', label:  'Paraíba' },
-    { value: 'PR', label:  'Paraná' },
-    { value: 'PE', label:  'Pernambuco' },
-    { value: 'PI', label:  'Piauí' },
-    { value: 'RJ', label:  'Rio de Janeiro' },
-    { value: 'RN', label:  'Rio Grande do Norte' },
-    { value: 'RS', label:  'Rio Grande do Sul' },
-    { value: 'RO', label:  'Rondônia' },
-    { value: 'RR', label:  'Roraima' },
-    { value: 'SC', label:  'Santa Catarina' },
-    { value: 'SP', label:  'São Paulo' },
-    { value: 'SE', label:  'Sergipe' },
-    { value: 'TO', label:  'Tocantins' }
-];
-
 const Identificadores = (
   <Form horizontal>
     <h3>Identificadores</h3>
     <DadosGeraisDoIdentificador />
     <Certidao />
+    <CTPS />
+    <TituloDeEleitor />
     <Button type="submit">
       Próximo
     </Button>    
