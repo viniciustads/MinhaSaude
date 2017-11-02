@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Select from 'react-select';
-import {Nav, Navbar, NavItem, MenuItem, NavDropdown} from 'react-bootstrap';
+import {Col, Button, ControlLabel, Form, FormControl, FormGroup, Nav, Navbar, NavItem, MenuItem, NavDropdown} from 'react-bootstrap';
 
 class Banner extends React.Component {
     render(){
@@ -55,5 +55,42 @@ const ufs = [
     { value: 'TO', label:  'Tocantins' }
 ];
 
+const Identificadores = (
+  <Form horizontal>
+    <h3>Identificadores</h3>
+    <FormGroup controlId="TipoDoIdentificador" className="col-sm-6">      
+        <Col sm={11}>
+          <label>Tipo do identificador</label>
+        </Col>
+        <Col sm={11}>
+          <FormControl componentClass="select" placeholder="select">
+            <option value="01">Único dentro da organização</option>
+            <option value="02">Número do prontuário</option>
+            <option value="21">Radiologia</option>
+            <option value="22">Patologia</option>
+            <option value="23">Farmácia</option>
+          </FormControl>
+        </Col>
+    </FormGroup>
+    <FormGroup controlId="AreaGeografica" className="col-sm-6">
+      <Col sm={11}>
+        <ControlLabel>Área geográfica</ControlLabel>      
+      </Col>
+      <Col sm={11}>
+        <FormControl componentClass="select" placeholder="select">
+          <option value="1">Local</option>
+          <option value="2">Área/região/distrito</option>
+          <option value="3">Estado/província/território</option>
+          <option value="4">Nacional</option>
+        </FormControl>
+      </Col>
+    </FormGroup>
+    <Button type="submit">
+      Próximo
+    </Button>
+  </Form>
+);
+
 render(<Banner/>, document.getElementsByTagName('header')[0]);
 render(MenuPrincipal, document.getElementById('menuPrincipal'));
+render(Identificadores, document.getElementById('identificadores'));
