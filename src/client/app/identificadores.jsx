@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Col, ControlLabel, FormControl, FormGroup, Panel} from 'react-bootstrap';
+import {ControlLabel, FormControl, Panel} from 'react-bootstrap';
 import {ListaDeElementos, TiposDeIdentificador, AreaGeografica, Certidoes, ListaDeUFs} from './listas'
 import LabelGroup from './componentes/labelGroup';
 
@@ -94,7 +94,7 @@ class TituloDeEleitor extends React.Component {
     }
 };
 
-export class DadosIdentificador extends React.Component {
+export default class DadosIdentificador extends React.Component {
     render() {
         var objeto = this.props.objeto;
         var identificador = objeto != null ? objeto : {};

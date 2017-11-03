@@ -15,9 +15,6 @@ export function ListaDeElementos(props) {
     );
 }
 
-
-
-
 export const TipodoEndereco = [
     { value: '01', label: 'Comercial' },
     { value: '02', label: 'Correio ou postal' },
@@ -77,4 +74,13 @@ export const ListaDeUFs = [
     { value: 'SP', label:  'São Paulo' },
     { value: 'SE', label:  'Sergipe' },
     { value: 'TO', label:  'Tocantins' }
+];
+
+export const UsoDoNome = [
+    { value: '1', label:  'Relatório (R)' },
+    { value: '2', label:  'Nome de recém-nascido (N)' },
+    { value: '3', label:  'Nome profissional ou comercial (C)' },
+    { value: '4', label:  'Nome de solteiro (nascimento) (original)' },
+    { value: '5', label:  'Nome registrado (nome legal)' },
+    { value: '8', label:  'Outro nome (alias)' }
 ];

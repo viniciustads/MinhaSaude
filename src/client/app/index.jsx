@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
-import {DadosIdentificador} from './identificadores'
+import DadosIdentificador from './identificadores'
+import Nomes from './nomes'
 import {DadosEndereco} from './endereco'
 
 class Banner extends React.Component {
@@ -94,4 +95,5 @@ const Endereco = (
 render(<Banner/>, document.getElementsByTagName('header')[0]);
 render(MenuPrincipal, document.getElementById('menuPrincipal'));
 render(Identificadores, document.getElementById('identificadores'));
+render(<Nomes />, document.getElementById('nomes'));
 render(Endereco, document.getElementById('endereco'));
