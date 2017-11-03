@@ -15,8 +15,36 @@ export function ListaDeElementos(props) {
     );
 }
 
+export const OrdemDeNascimento = [
+    { value: '1', label: 'único ou primeiro' },
+    { value: '2', label: 'segundo' },
+    { value: '3', label: 'terceiro' },
+    { value: '4', label: 'quarto' },
+    { value: '5', label: 'quinto' },
+    { value: '6', label: 'sexto' },
+    { value: '7', label: 'outros' },
+    { value: '9', label: 'não declarado' }
+]
 
+export const PluralidadeNascimentos = [
+    { value: '1', label: 'Único' },
+    { value: '2', label: 'Gêmeos' },
+    { value: '3', label: 'Trigêmeos' },
+    { value: '4', label: 'Quádruplos' },
+    { value: '5', label: 'Quíntuplos' },
+    { value: '6', label: 'Sêxtuplos' },
+    { value: '7', label: 'Outros' },
+    { value: '9', label: 'Não declarado' }
+]
 
+export const SituacaoFamiliar = [
+    { value: '1', label: 'companheiro(a) e filho(s)' },
+    { value: '2', label: 'companheiro(a) com laços conjugais e sem filhos' },
+    { value: '3', label: 'companheiro(a), com filho(s) e/ou outro(s) familiares' },
+    { value: '4', label: 'familiar(es) sem companheiro(a)' },
+    { value: '5', label: 'outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais' },
+    { value: '6', label: 'Vive só' }
+]
 
 export const TipodoEndereco = [
     { value: '01', label: 'Comercial' },

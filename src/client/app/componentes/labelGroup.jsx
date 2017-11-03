@@ -9,7 +9,7 @@ export default class LabelGroup extends React.Component{
            <Col sm={12}>
             <ControlLabel>{this.props.label}</ControlLabel>      
            </Col>
-           <Col sm={12}>
+           <Col sm={this.props.col || 12}>
             {this.props.children}
            </Col>
            </FormGroup>
