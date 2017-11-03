@@ -15,6 +15,31 @@ export function ListaDeElementos(props) {
     );
 }
 
+export const Relacionamento = [
+    { value: '7', label: 'Avó materna' },
+    { value: '8', label: 'Avô materno' },
+    { value: '22', label: 'Cônjuge/companheiro(a)' },
+    { value: '23', label: 'Irmão' },
+    { value: '24', label: 'Irmã' },
+    { value: '25', label: 'Meio-irmão' },
+    { value: '26', label: 'Meio-irmã' },
+    { value: '27', label: 'Irmãos' },
+    { value: '28', label: 'Criança' },
+    { value: '29', label: 'Filha' },
+    { value: '36', label: 'Avó materna' },
+    { value: '37', label: 'Avô paterno' },
+    { value: '38', label: 'Tio materno' },
+    { value: '40', label: 'Tio paterno' },
+    { value: '41', label: 'Tia paterna' },
+    { value: '189', label: 'Recém-nascido' },
+    { value: '254', label: 'Pais' },
+    { value: '262', label: 'Mãe adotiva' },
+    { value: '263', label: 'Pai adotivo' },
+    { value: '264', label: 'Responsável' },
+    { value: '265', label: 'Coabitante' },
+    { value: '939', label: 'Tia materna' }
+]
+
 export const OrdemDeNascimento = [
     { value: '1', label: 'único ou primeiro' },
     { value: '2', label: 'segundo' },

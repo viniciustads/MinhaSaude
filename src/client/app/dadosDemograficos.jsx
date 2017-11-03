@@ -27,14 +27,14 @@ export default class DadosDemograficos extends React.Component{
                         </LabelGroup>
                     </Panel>                
                     <Panel>
-                        <TextBox  controlId="DataDeNascimento" label="Data de nascimento" type="date" col="6"/>
+                        <TextBox  controlId="DataDeNascimento" label="Data de nascimento" type="date" col={6}/>
                         <IndicadorDeAcuracia></IndicadorDeAcuracia>
                         <LabelGroup controlId="Seguimento" label="Seguimento">
                             <Checkbox >Data precisa de seguimento</Checkbox> 
                         </LabelGroup>
                     </Panel>
                     <Panel>
-                        <TextBox  controlId="Obito" label="Óbito" type="date" col="6"/>
+                        <TextBox  controlId="Obito" label="Óbito" type="date" col={6}/>
                         <IndicadorDeAcuracia></IndicadorDeAcuracia>
                         <LabelGroup controlId="fonteDeNotificacao" label="Fonte de notificação">
                             <Radio name="fonteNotificacao" inline>
@@ -71,7 +71,7 @@ export default class DadosDemograficos extends React.Component{
                     </LabelGroup>
                 </Panel>
                 <Panel>
-                    <LabelGroup label="Situação familiar (convive com)" col="6">
+                    <LabelGroup label="Situação familiar (convive com)" col={6}>
                         <FormControl componentClass="select" required>
                                 <ListaDeElementos lista={ SituacaoFamiliar } />
                             </FormControl>
@@ -83,12 +83,12 @@ export default class DadosDemograficos extends React.Component{
                         <Radio name="nacionalidade" inline>Estrangeiro</Radio>
                     </LabelGroup>
                     <Panel>
-                        <LabelGroup label="Estado de nascimento" col="3">
+                        <LabelGroup label="Estado de nascimento" col={3}>
                             <FormControl componentClass="select" required>
                                 <ListaDeElementos lista={ ListaDeUFs } />
                             </FormControl>                            
                         </LabelGroup>
-                        <LabelGroup label="Acre (municípios)" col="3">
+                        <LabelGroup label="Acre (municípios)" col={3}>
                             <FormControl componentClass="select" required>
                                 <ListaDeElementos lista={ ListaDeUFs } />
                             </FormControl>                            
@@ -96,14 +96,14 @@ export default class DadosDemograficos extends React.Component{
                     </Panel>
                 </Panel>
                 <Panel>
-                        <LabelGroup label="Pluralidade de nascimentos" col="3">
+                        <LabelGroup label="Pluralidade de nascimentos" col={3}>
                             <FormControl componentClass="select" required>
                                 <ListaDeElementos lista={ PluralidadeNascimentos } />
                             </FormControl>                            
                         </LabelGroup>
                     </Panel>
                     <Panel>
-                        <LabelGroup label="Ordem de nascimento" col="3">
+                        <LabelGroup label="Ordem de nascimento" col={3}>
                             <FormControl componentClass="select" required>
                                 <ListaDeElementos lista={ OrdemDeNascimento } />
                             </FormControl>                            

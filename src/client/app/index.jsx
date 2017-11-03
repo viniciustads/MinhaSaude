@@ -5,6 +5,7 @@ import DadosIdentificador from './identificadores'
 import Nomes from './nomes'
 import {DadosEndereco} from './endereco'
 import DadosDemograficos from './dadosDemograficos'
+import Vinculos from './vinculos'
 
 class Banner extends React.Component {
     render(){
@@ -99,3 +100,4 @@ render(Identificadores, document.getElementById('identificadores'));
 render(<Nomes />, document.getElementById('nomes'));
 render(<DadosDemograficos/>, document.getElementById('dadosDemograficos'));
 render(Endereco, document.getElementById('endereco'));
+render(<Vinculos/>, document.getElementById('vinculos'));
