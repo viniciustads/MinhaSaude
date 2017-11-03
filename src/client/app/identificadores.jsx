@@ -3,19 +3,18 @@ import {render} from 'react-dom';
 import {Col, ControlLabel, FormControl, FormGroup, Panel} from 'react-bootstrap';
 import {ListaDeElementos, TiposDeIdentificador, AreaGeografica, Certidoes, ListaDeUFs} from './listas'
 
-export class DadosGeraisDoIdentificador extends React.Component {
-    updateState(element) {
-        this.setState({value: element});
-    }
-
+class DadosGeraisDoIdentificador extends React.Component {    
     render() {
+        var dados = this.props.objeto
+                        ? this.props.objeto
+                        : {};
         return <Panel>
             <FormGroup controlId="TipoDoIdentificador" className="col-sm-6">      
                 <Col sm={12}>
                 <label>Tipo do identificador</label>
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" required>
+                    <FormControl componentClass="select" required defaultValue={dados.TipoDoIdentificador}>
                         <ListaDeElementos lista={TiposDeIdentificador} />
                     </FormControl>
                 </Col>
@@ -25,7 +24,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Área geográfica</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" required>
+                    <FormControl componentClass="select" required defaultValue={dados.AreaGeografica}>
                         <ListaDeElementos lista={AreaGeografica} />
                     </FormControl>
                 </Col>
@@ -35,7 +34,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Designação</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" required maxLength="25" />
+                    <FormControl componentClass="input" defaultValue={dados.Designacao} required maxLength="25" />
                 </Col>
             </FormGroup>
             <FormGroup controlId="DataIdentificador" className="col-sm-6">
@@ -43,7 +42,7 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Data</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" required type="date" />
+                    <FormControl componentClass="input" defaultValue={dados.DataIdentificador} required type="date" />
                 </Col>
             </FormGroup>
             <FormGroup controlId="Emissor" className="col-sm-6">
@@ -51,106 +50,129 @@ export class DadosGeraisDoIdentificador extends React.Component {
                     <ControlLabel>Emissor</ControlLabel>      
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" required maxLength="25" />
+                    <FormControl componentClass="input" required maxLength="25" defaultValue={dados.Emissor} />
                 </Col>
             </FormGroup>
         </Panel>
     }
 };
   
-export class Certidao extends React.Component {
+class Certidao extends React.Component {
     render() {
-    return <Panel header="Certidão">    
-        <FormGroup controlId="TipoDeCertidao" className="col-sm-12">      
-            <Col sm={12}>
-                <label>Tipo de certidão</label>
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="select" placeholder="select">
-                    <ListaDeElementos lista={Certidoes} />
-                </FormControl>           
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="NomeDoCartorio" className="col-sm-12">
-            <Col sm={12}>
-                <ControlLabel>Nome do Cartório</ControlLabel>      
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" maxLength="25" />
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="LivroDoCartorio" className="col-sm-4">
-            <Col sm={12}>
-                <ControlLabel>Livro</ControlLabel>      
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" type="number" />
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="FolhaDoCartorio" className="col-sm-4">
-            <Col sm={12}>
-                <ControlLabel>Folha</ControlLabel>      
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" type="number" />
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="TermoDoCartorio" className="col-sm-4">
-            <Col sm={12}>
-                <ControlLabel>Termo</ControlLabel>      
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" type="number" />
-            </Col>
-        </FormGroup>
+        var dados = this.props.objeto
+                        ? this.props.objeto
+                        : {};
+        return <Panel header="Certidão">    
+            <FormGroup controlId="TipoDeCertidao" className="col-sm-12">      
+                <Col sm={12}>
+                    <label>Tipo de certidão</label>
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.TipoDeCertidao}>
+                        <ListaDeElementos lista={Certidoes} />
+                    </FormControl>           
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="NomeDoCartorio" className="col-sm-12">
+                <Col sm={12}>
+                    <ControlLabel>Nome do Cartório</ControlLabel>      
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.NomeDoCartorio} />
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="LivroDoCartorio" className="col-sm-4">
+                <Col sm={12}>
+                    <ControlLabel>Livro</ControlLabel>      
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" type="number" defaultValue={dados.LivroDoCartorio} />
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="FolhaDoCartorio" className="col-sm-4">
+                <Col sm={12}>
+                    <ControlLabel>Folha</ControlLabel>      
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" type="number" defaultValue={dados.FolhaDoCartorio} />
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="TermoDoCartorio" className="col-sm-4">
+                <Col sm={12}>
+                    <ControlLabel>Termo</ControlLabel>      
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" type="number" defaultValue={dados.TermoDoCartorio} />
+                </Col>
+            </FormGroup>
         </Panel>
     }
 };
 
-export class CTPS extends React.Component {
+class CTPS extends React.Component {
     render() {
-    return <Panel header="Carteira de trabalho">        
-        <FormGroup controlId="SerieCTPS" className="col-sm-6">      
-            <Col sm={12}>
-                <label>Série</label>
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" maxLength="25" />
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="EstadoCTPS" className="col-sm-6">      
-            <Col sm={12}>
-                <label>Estado</label>
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="select" placeholder="select">
-                    <ListaDeElementos lista={ListaDeUFs} />
-                </FormControl>
-            </Col>
-        </FormGroup>
+        var dados = this.props.objeto
+                        ? this.props.objeto
+                        : {};
+        return <Panel header="Carteira de trabalho">        
+            <FormGroup controlId="SerieCTPS" className="col-sm-6">      
+                <Col sm={12}>
+                    <label>Série</label>
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.SerieCTPS} />
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="EstadoCTPS" className="col-sm-6">      
+                <Col sm={12}>
+                    <label>Estado</label>
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.EstadoCTPS}>
+                        <ListaDeElementos lista={ListaDeUFs} />
+                    </FormControl>
+                </Col>
+            </FormGroup>
         </Panel>
     }
 };
 
-export class TituloDeEleitor extends React.Component {
+class TituloDeEleitor extends React.Component {
     render() {
-    return <Panel header="Título de Eleitor">        
-        <FormGroup controlId="SecaoTitulo" className="col-sm-6">      
-            <Col sm={12}>
-                <label>Seção</label>
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" maxLength="25" />
-            </Col>
-        </FormGroup>
-        <FormGroup controlId="ZonaTitulo" className="col-sm-6">      
-            <Col sm={12}>
-                <label>Zona</label>
-            </Col>
-            <Col sm={12}>
-                <FormControl componentClass="input" maxLength="25" />
-            </Col>
-        </FormGroup>
+        var dados = this.props.objeto
+        ? this.props.objeto
+        : {};
+        return <Panel header="Título de Eleitor">        
+            <FormGroup controlId="SecaoTitulo" className="col-sm-6">      
+                <Col sm={12}>
+                    <label>Seção</label>
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.SecaoTitulo} />
+                </Col>
+            </FormGroup>
+            <FormGroup controlId="ZonaTitulo" className="col-sm-6">      
+                <Col sm={12}>
+                    <label>Zona</label>
+                </Col>
+                <Col sm={12}>
+                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.ZonaTitulo} />
+                </Col>
+            </FormGroup>
         </Panel>
     }
 };
+
+export class DadosIdentificador extends React.Component {
+    render() {
+        var objeto = this.props.objeto;
+        var identificador = objeto != null ? objeto : {};
+        return <div className="dadosIdentificador">            
+            <h3>Identificadores</h3>
+            <DadosGeraisDoIdentificador objeto={identificador.DadosGerais} />
+            <Certidao objeto={identificador.Certidao} />
+            <CTPS objeto={identificador.CTPS} />
+            <TituloDeEleitor objeto={identificador.TituloDeEleitor} />
+            </div>
+    }
+}  

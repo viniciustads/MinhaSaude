@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
-import {DadosGeraisDoIdentificador, Certidao, CTPS, TituloDeEleitor} from './identificadores'
+import {DadosIdentificador} from './identificadores'
 
 class Banner extends React.Component {
     render(){
@@ -27,16 +27,37 @@ const MenuPrincipal = (
   </Navbar>  
 )
 
+var identificador = {
+  DadosGerais: {
+    TipoDoIdentificador: '02',
+    AreaGeografica: '3',
+    Designacao: 'Teste',
+    DataIdentificador: '2017-11-02',
+    Emissor: 'Hospital'
+  },
+  Certidao: {
+    TipoDeCertidao: 'casamento',
+    NomeDoCartorio: 'Cartório',
+    LivroDoCartorio: 3,
+    FolhaDoCartorio: 1,
+    TermoDoCartorio: 0
+  },
+  CTPS: {
+    SerieCTPS: 'ABC',
+    EstadoCTPS: 'GO'
+  },
+  TituloDeEleitor: {
+    SecaoTitulo: '001',
+    ZonaTitulo: '1010'
+  }
+};
+
 const Identificadores = (
-  <Form horizontal>
-    <h3>Identificadores</h3>
-    <DadosGeraisDoIdentificador />
-    <Certidao />
-    <CTPS />
-    <TituloDeEleitor />
+  <Form horizontal>  
+    <DadosIdentificador objeto={identificador} />
     <Button type="submit">
       Próximo
-    </Button>    
+    </Button>
   </Form>
 );
 

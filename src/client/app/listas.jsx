@@ -1,15 +1,16 @@
 import React from 'react';
 
-export function ItemDeLista(props) {
-    return <option value={props.value.value}>{props.value.label}</option>;
+function ItemDeLista(props) {
+    return <option value={props.value}>{props.label}</option>;
 }
 
 export function ListaDeElementos(props) {
     const lista = props.lista;
     return (
       lista.map((elemento) =>
-            <ItemDeLista key={elemento.value}
-                      value={elemento} />
+            <ItemDeLista key={elemento.value} 
+                        value={elemento.value}
+                        label={elemento.label} />
             )
     );
 }
