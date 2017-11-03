@@ -80,7 +80,7 @@ class DadosGeraisDoEndereco extends React.Component {
                             <Radio name="radioGroup" inline> Estimado</Radio>{' '}
                             <Radio name="radioGroup" inline>Desconhecido</Radio> 
                 </Col>
-                <Col sm={12}>                              
+                <Col sm={12} >                              
                     <label>Ano </label>{'   '}              
                             <Radio name="radioGroup" inline> Acurado </Radio>{' '}
                             <Radio name="radioGroup" inline> Estimado</Radio>{' '}
@@ -90,34 +90,31 @@ class DadosGeraisDoEndereco extends React.Component {
                 </Col>
              </Row>
 
-
-
-
-
-            <FormGroup controlId="Emissor" className="col-sm-6">
+            <FormGroup controlId="TipoDoPais" className="col-sm-6">
                 <Col sm={12}>
-                    <ControlLabel>Emissor</ControlLabel>      
-                </Col>
-                <Col sm={12}>
-                    <FormControl componentClass="input" required maxLength="25" defaultValue={dados.Emissor} />
-                </Col>
+                    <ControlLabel>País</ControlLabel>      
+                </Col>   
+                <Col sm={12}>                         
+                            <Radio name="radioGroup" inline>Brasil</Radio>{' '}
+                            <Radio name="radioGroup" inline>Outro</Radio>                  
+                  </Col>
             </FormGroup>
         </Panel>
     }
 };
   
-class Certidao extends React.Component {
+class Brasil extends React.Component {
     render() {
         var dados = this.props.objeto
                         ? this.props.objeto
                         : {};
         return <Panel header="Certidão">    
-            <FormGroup controlId="TipoDeCertidao" className="col-sm-12">      
+            <FormGroup controlId="TipoDeBrasil" className="col-sm-12">      
                 <Col sm={12}>
                     <label>Tipo de certidão</label>
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.TipoDeCertidao}>
+                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.TipoDeBrasil}>
                         <ListaDeElementos lista={Certidoes} />
                     </FormControl>           
                 </Col>
@@ -158,26 +155,26 @@ class Certidao extends React.Component {
     }
 };
 
-class CTPS extends React.Component {
+class Outros extends React.Component {
     render() {
         var dados = this.props.objeto
                         ? this.props.objeto
                         : {};
         return <Panel header="Carteira de trabalho">        
-            <FormGroup controlId="SerieCTPS" className="col-sm-6">      
+            <FormGroup controlId="SerieOutros" className="col-sm-6">      
                 <Col sm={12}>
                     <label>Série</label>
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.SerieCTPS} />
+                    <FormControl componentClass="input" maxLength="25" defaultValue={dados.SerieOutros} />
                 </Col>
             </FormGroup>
-            <FormGroup controlId="EstadoCTPS" className="col-sm-6">      
+            <FormGroup controlId="EstadoOutros" className="col-sm-6">      
                 <Col sm={12}>
                     <label>Estado</label>
                 </Col>
                 <Col sm={12}>
-                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.EstadoCTPS}>
+                    <FormControl componentClass="select" placeholder="select" defaultValue={dados.EstadoOutros}>
                         <ListaDeElementos lista={ListaDeUFs} />
                     </FormControl>
                 </Col>
@@ -219,8 +216,8 @@ export class DadosEndereco extends React.Component {
         return <div className="dadosIdentificador">            
             <h3>Endereços</h3>
             <DadosGeraisDoEndereco objeto={endereco.DadosGerais} />
-            <Certidao objeto={identificador.Certidao} />
-            <CTPS objeto={identificador.CTPS} />
+            <Brasil objeto={identificador.Brasil} />
+            <Outros objeto={identificador.Outros} />
             <TituloDeEleitor objeto={identificador.TituloDeEleitor} />
             </div>
     }
