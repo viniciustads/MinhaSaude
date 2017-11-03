@@ -15,6 +15,19 @@ export function ListaDeElementos(props) {
     );
 }
 
+
+
+
+export const TipodoEndereco = [
+    { value: '01', label: 'Comercial' },
+    { value: '02', label: 'Correio ou postal' },
+    { value: '03', label: 'Acomodação temporária' },
+    { value: '04', label: 'Residencial' },
+    { value: '08', label: 'Sem endereço fixo' },
+    { value: '09', label: 'Desconhecido/não declarado' }    
+];
+
+
 export const TiposDeIdentificador = [
     { value: '01', label: 'Único dentro da organização' },
     { value: '02', label: 'Número do prontuário' },

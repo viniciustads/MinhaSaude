@@ -8,3 +8,8 @@ body > div.container-fluid
 {
     padding: 0;
 }
+
+.radio {
+  margin-top: 0;
+  margin-bottom: 0;
+}
