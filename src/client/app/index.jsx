@@ -4,6 +4,7 @@ import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDrop
 import DadosIdentificador from './identificadores'
 import Nomes from './nomes'
 import {DadosEndereco} from './endereco'
+import {DadosComunicacoesEletronicas} from './comunicacoesEletronicas'
 import DadosDemograficos from './dadosDemograficos'
 import Vinculos from './vinculos'
 
@@ -25,7 +26,7 @@ const MenuPrincipal = (
       <NavItem eventKey={2} href="#">Nomes</NavItem>
       <NavItem eventKey={3} href="#dadosDemograficos">Dados demográficos</NavItem>
       <NavItem eventKey={4} href="#endereco">Endereços</NavItem>
-      <NavItem eventKey={5} href="#">Comunicações eletrônicas</NavItem>
+      <NavItem eventKey={5} href="#comunicacoesEletronicas">Comunicações eletrônicas</NavItem>
       <NavItem eventKey={6} href="#">Vínculos</NavItem>
     </Nav>
   </Navbar>  
@@ -92,6 +93,11 @@ const Endereco = (
   </Form>
 );
 
+const ComunicacoesEletronicas = (
+  <Form horizontal>  
+   <DadosComunicacoesEletronicas objeto={comunicacoesEletronicas} />
+  </Form>
+);
 
 
 render(<Banner/>, document.getElementsByTagName('header')[0]);
@@ -100,4 +106,5 @@ render(Identificadores, document.getElementById('identificadores'));
 render(<Nomes />, document.getElementById('nomes'));
 render(<DadosDemograficos/>, document.getElementById('dadosDemograficos'));
 render(Endereco, document.getElementById('endereco'));
+render(ComunicacoesEletronicas, document.getElementById('comunicacoesEletronicas'));
 render(<Vinculos/>, document.getElementById('vinculos'));

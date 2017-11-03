@@ -7,11 +7,11 @@ function ItemDeLista(props) {
 export function ListaDeElementos(props) {
     const lista = props.lista;
     return (
-      lista.map((elemento) =>
-            <ItemDeLista key={elemento.value} 
-                        value={elemento.value}
-                        label={elemento.label} />
-            )
+        lista.map((elemento) =>
+            <ItemDeLista key={elemento.value}
+                value={elemento.value}
+                label={elemento.label} />
+        )
     );
 }
 
@@ -76,7 +76,7 @@ export const TipodoEndereco = [
     { value: '03', label: 'Acomodação temporária' },
     { value: '04', label: 'Residencial' },
     { value: '08', label: 'Sem endereço fixo' },
-    { value: '09', label: 'Desconhecido/não declarado' }    
+    { value: '09', label: 'Desconhecido/não declarado' }
 ];
 
 
@@ -103,39 +103,96 @@ export const Certidoes = [
 
 export const ListaDeUFs = [
     { value: 'AC', label: 'Acre' },
-    { value: 'AL', label:  'Alagoas' },
-    { value: 'AP', label:  'Amapá' },
-    { value: 'AM', label:  'Amazonas' },
-    { value: 'BA', label:  'Bahia' },
-    { value: 'CE', label:  'Ceará' },
-    { value: 'DF', label:  'Distrito Federal' },
-    { value: 'ES', label:  'Espirito Santo' },
-    { value: 'GO', label:  'Goiás' },
-    { value: 'MA', label:  'Maranhão' },
-    { value: 'MS', label:  'Mato Grosso do Sul' },
-    { value: 'MT', label:  'Mato Grosso' },
-    { value: 'MG', label:  'Minas Gerais' },
-    { value: 'PA', label:  'Pará' },
-    { value: 'PB', label:  'Paraíba' },
-    { value: 'PR', label:  'Paraná' },
-    { value: 'PE', label:  'Pernambuco' },
-    { value: 'PI', label:  'Piauí' },
-    { value: 'RJ', label:  'Rio de Janeiro' },
-    { value: 'RN', label:  'Rio Grande do Norte' },
-    { value: 'RS', label:  'Rio Grande do Sul' },
-    { value: 'RO', label:  'Rondônia' },
-    { value: 'RR', label:  'Roraima' },
-    { value: 'SC', label:  'Santa Catarina' },
-    { value: 'SP', label:  'São Paulo' },
-    { value: 'SE', label:  'Sergipe' },
-    { value: 'TO', label:  'Tocantins' }
+    { value: 'AL', label: 'Alagoas' },
+    { value: 'AP', label: 'Amapá' },
+    { value: 'AM', label: 'Amazonas' },
+    { value: 'BA', label: 'Bahia' },
+    { value: 'CE', label: 'Ceará' },
+    { value: 'DF', label: 'Distrito Federal' },
+    { value: 'ES', label: 'Espirito Santo' },
+    { value: 'GO', label: 'Goiás' },
+    { value: 'MA', label: 'Maranhão' },
+    { value: 'MS', label: 'Mato Grosso do Sul' },
+    { value: 'MT', label: 'Mato Grosso' },
+    { value: 'MG', label: 'Minas Gerais' },
+    { value: 'PA', label: 'Pará' },
+    { value: 'PB', label: 'Paraíba' },
+    { value: 'PR', label: 'Paraná' },
+    { value: 'PE', label: 'Pernambuco' },
+    { value: 'PI', label: 'Piauí' },
+    { value: 'RJ', label: 'Rio de Janeiro' },
+    { value: 'RN', label: 'Rio Grande do Norte' },
+    { value: 'RS', label: 'Rio Grande do Sul' },
+    { value: 'RO', label: 'Rondônia' },
+    { value: 'RR', label: 'Roraima' },
+    { value: 'SC', label: 'Santa Catarina' },
+    { value: 'SP', label: 'São Paulo' },
+    { value: 'SE', label: 'Sergipe' },
+    { value: 'TO', label: 'Tocantins' }
 ];
 
 export const UsoDoNome = [
-    { value: '1', label:  'Relatório (R)' },
-    { value: '2', label:  'Nome de recém-nascido (N)' },
-    { value: '3', label:  'Nome profissional ou comercial (C)' },
-    { value: '4', label:  'Nome de solteiro (nascimento) (original)' },
-    { value: '5', label:  'Nome registrado (nome legal)' },
-    { value: '8', label:  'Outro nome (alias)' }
+    { value: '1', label: 'Relatório (R)' },
+    { value: '2', label: 'Nome de recém-nascido (N)' },
+    { value: '3', label: 'Nome profissional ou comercial (C)' },
+    { value: '4', label: 'Nome de solteiro (nascimento) (original)' },
+    { value: '5', label: 'Nome registrado (nome legal)' },
+    { value: '8', label: 'Outro nome (alias)' }
 ];
+
+export const MunicipiosEndereco = [
+    { value: '1200013', label: 'Acrelândia' },
+    { value: '1200054', label: 'Assis Brasil' },
+    { value: '1200104', label: 'Brasiléia' },
+    { value: '1200138', label: 'Bujari' },
+    { value: '1200179', label: 'Capixaba' },
+    { value: '1200203', label: 'Cruzeiro do Sul' },
+    { value: '1200252', label: 'Epitaciolândia' },
+    { value: '1200302', label: 'Feijó' },
+    { value: '1200328', label: 'Jordão' },
+    { value: '1200336', label: 'Mâncio Lima' },
+    { value: '1200344', label: 'Manoel Urbano' },
+    { value: '1200351', label: 'Marechal Thaumaturgo' },
+    { value: '1200385', label: 'Plácido de Castro' },
+    { value: '1200807', label: 'Porto Acre' },
+    { value: '1200393', label: 'Porto Walter' },
+    { value: '1200401', label: 'Rio Branco' },
+    { value: '1200427', label: 'Rodrigues Alves' },
+    { value: '1200435', label: 'Santa Rosa do Purus' },
+    { value: '1200500', label: 'Sena Madureira' },
+    { value: '1200450', label: 'Senador Guiomard' },
+    { value: '1200609', label: 'Tarauacá' },
+    { value: '1200708', label: 'Xapuri' }
+];
+
+export const OutrosPaises = [
+    { value: '1200013', label: 'Brasil' },
+    { value: '1200054', label: 'Japão' },
+    { value: '1200104', label: 'Coreia do Sul' }
+];
+
+
+
+export const Preferencias = [
+    { value: 'A', label: 'Horário comercial' },
+    { value: 'B', label: 'Durante o dia' },
+    { value: 'C', label: 'Finais de semana' },
+    { value: 'D', label: 'Qualquer hora' },
+    { value: 'E', label: 'Período noturno' }
+];
+
+export const Utilizacao = [
+    { value: 'A', label: 'Comercial' },
+    { value: 'B', label: 'Pessoal' },
+    { value: 'C', label: 'Comercial ou pessoal' }
+];
+
+export const Meio = [
+    { value: 'A', label: 'Telefone' },
+    { value: 'B', label: 'Celular' },
+    { value: 'C', label: 'Fax' },
+    { value: 'D', label: 'Pager' },
+    { value: 'E', label: 'Email' },
+    { value: 'F', label: 'URL' },
+];
+
