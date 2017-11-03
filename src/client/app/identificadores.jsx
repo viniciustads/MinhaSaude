@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Col, ControlLabel, FormControl, FormGroup, Panel} from 'react-bootstrap';
 import {ListaDeElementos, TiposDeIdentificador, AreaGeografica, Certidoes, ListaDeUFs} from './listas'
-import { LabelGroup } from './componentes/labelGroup'
+import LabelGroup from './componentes/labelGroup';
 
 class DadosGeraisDoIdentificador extends React.Component {    
     render() {
