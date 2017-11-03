@@ -1,9 +1,11 @@
-import React from 'react';
+﻿import React from 'react';
 import {render} from 'react-dom';
 import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
 import DadosIdentificador from './identificadores'
 import Nomes from './nomes'
 import {DadosEndereco} from './endereco'
+import DadosDemograficos from './dadosDemograficos'
+import Vinculos from './vinculos'
 
 class Banner extends React.Component {
     render(){
@@ -21,7 +23,7 @@ const MenuPrincipal = (
     <Nav>
       <NavItem eventKey={1} href="#identificadores">Identificadores</NavItem>
       <NavItem eventKey={2} href="#">Nomes</NavItem>
-      <NavItem eventKey={3} href="#">Dados demográficos</NavItem>
+      <NavItem eventKey={3} href="#dadosDemograficos">Dados demográficos</NavItem>
       <NavItem eventKey={4} href="#endereco">Endereços</NavItem>
       <NavItem eventKey={5} href="#">Comunicações eletrônicas</NavItem>
       <NavItem eventKey={6} href="#">Vínculos</NavItem>
@@ -96,4 +98,6 @@ render(<Banner/>, document.getElementsByTagName('header')[0]);
 render(MenuPrincipal, document.getElementById('menuPrincipal'));
 render(Identificadores, document.getElementById('identificadores'));
 render(<Nomes />, document.getElementById('nomes'));
+render(<DadosDemograficos/>, document.getElementById('dadosDemograficos'));
 render(Endereco, document.getElementById('endereco'));
+render(<Vinculos/>, document.getElementById('vinculos'));

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 function ItemDeLista(props) {
     return <option value={props.value}>{props.label}</option>;
@@ -15,6 +15,61 @@ export function ListaDeElementos(props) {
     );
 }
 
+export const Relacionamento = [
+    { value: '7', label: 'Avó materna' },
+    { value: '8', label: 'Avô materno' },
+    { value: '22', label: 'Cônjuge/companheiro(a)' },
+    { value: '23', label: 'Irmão' },
+    { value: '24', label: 'Irmã' },
+    { value: '25', label: 'Meio-irmão' },
+    { value: '26', label: 'Meio-irmã' },
+    { value: '27', label: 'Irmãos' },
+    { value: '28', label: 'Criança' },
+    { value: '29', label: 'Filha' },
+    { value: '36', label: 'Avó materna' },
+    { value: '37', label: 'Avô paterno' },
+    { value: '38', label: 'Tio materno' },
+    { value: '40', label: 'Tio paterno' },
+    { value: '41', label: 'Tia paterna' },
+    { value: '189', label: 'Recém-nascido' },
+    { value: '254', label: 'Pais' },
+    { value: '262', label: 'Mãe adotiva' },
+    { value: '263', label: 'Pai adotivo' },
+    { value: '264', label: 'Responsável' },
+    { value: '265', label: 'Coabitante' },
+    { value: '939', label: 'Tia materna' }
+]
+
+export const OrdemDeNascimento = [
+    { value: '1', label: 'único ou primeiro' },
+    { value: '2', label: 'segundo' },
+    { value: '3', label: 'terceiro' },
+    { value: '4', label: 'quarto' },
+    { value: '5', label: 'quinto' },
+    { value: '6', label: 'sexto' },
+    { value: '7', label: 'outros' },
+    { value: '9', label: 'não declarado' }
+]
+
+export const PluralidadeNascimentos = [
+    { value: '1', label: 'Único' },
+    { value: '2', label: 'Gêmeos' },
+    { value: '3', label: 'Trigêmeos' },
+    { value: '4', label: 'Quádruplos' },
+    { value: '5', label: 'Quíntuplos' },
+    { value: '6', label: 'Sêxtuplos' },
+    { value: '7', label: 'Outros' },
+    { value: '9', label: 'Não declarado' }
+]
+
+export const SituacaoFamiliar = [
+    { value: '1', label: 'companheiro(a) e filho(s)' },
+    { value: '2', label: 'companheiro(a) com laços conjugais e sem filhos' },
+    { value: '3', label: 'companheiro(a), com filho(s) e/ou outro(s) familiares' },
+    { value: '4', label: 'familiar(es) sem companheiro(a)' },
+    { value: '5', label: 'outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais' },
+    { value: '6', label: 'Vive só' }
+]
 export const TipodoEndereco = [
     { value: '01', label: 'Comercial' },
     { value: '02', label: 'Correio ou postal' },
