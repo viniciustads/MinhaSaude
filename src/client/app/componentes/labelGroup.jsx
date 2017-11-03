@@ -1,6 +1,5 @@
 import React from 'react';
-import { Col, FormControl, FormGroup, ControlLabel} from 'react-bootstrap';
-
+import { Col, FormGroup, ControlLabel} from 'react-bootstrap';
 
 export default class LabelGroup extends React.Component{
     render(){
