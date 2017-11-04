@@ -14,26 +14,37 @@ export default class DadosDemograficos extends React.Component{
         super();
         this.changeEstado = this.changeEstado.bind(this);
     }
+
+    obtenhaMunicipios(data, uf){
+        return data.filter(function(el){ return el.uf == uf;})
+    }
+
+    parseMunicipios(municipios){
+        return municipios.map(function(el){ return {value: el.codigo, label: el.municipio}});
+    }
+
     componentWillMount() {       
 
-        var municipios = jsonFile.filter(function(el){ return el.uf == "AC";}).map(function(el){ return {value: el.codigo, label: el.municipio}});
+        var municipios = this.obtenhaMunicipios(jsonFile,"AC");       
+
+        var listaMunicipios = this.parseMunicipios(municipios);
 
         this.setState({ 
             data: jsonFile,
-            estadoAtual: "Acre",
-            municipiosAtuais: municipios
+            estadoAtual: municipios[0].estado,
+            municipiosAtuais: listaMunicipios
          });
     }
 
-    changeEstado(e){
+    changeEstado(e){        
         
-        var municipios = this.state.data.filter(function(el){ return el.uf == e.target.value;});
+        var municipios = this.obtenhaMunicipios(this.state.data, e.target.value);
 
-        var listaDeMunicipios = municipios.map(function(el){ return {value: el.codigo, label: el.municipio}});
+        var listaDeMunicipios = this.parseMunicipios(municipios);
 
         this.setState({ 
-            municipiosAtuais: listaDeMunicipios,
-            estadoAtual: municipios[0].estado
+            estadoAtual: municipios[0].estado,
+            municipiosAtuais: listaDeMunicipios            
          });
     }
 
