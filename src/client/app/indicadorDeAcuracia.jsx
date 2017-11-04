@@ -8,35 +8,35 @@ export default class IndicadorDeAcuracia extends React.Component{
             <LabelGroup controlId="IndicadorDeAcuracia" label="Indicador de acurácia">
                 
                 <LabelGroup label="Dia:">                 
-                    <Radio name="diaAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Acurado
                     </Radio>
-                    <Radio name="diaAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Estimado
                     </Radio>
-                    <Radio name="diaAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Desconhecido
                     </Radio>
                 </LabelGroup>                  
                 <LabelGroup label="Mês:">                    
-                    <Radio name="mesAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Acurado
                     </Radio>
-                    <Radio name="mesAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Estimado
                     </Radio>
-                    <Radio name="mesAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Desconhecido
                     </Radio>
                 </LabelGroup>
                 <LabelGroup label="Ano:">                    
-                    <Radio name="anoAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Acurado
                     </Radio>
-                    <Radio name="anoAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Estimado
                     </Radio>
-                    <Radio name="anoAcuracia" inline>
+                    <Radio name="Acuracia" inline>
                         Desconhecido
                     </Radio>
                 </LabelGroup>
