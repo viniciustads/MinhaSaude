@@ -4,6 +4,7 @@ import Select from 'react-select';
 import {Nav, Navbar, NavItem, MenuItem, NavDropdown, Checkbox, Radio, FormGroup, FormControl, Panel, Form} from 'react-bootstrap';
 import TextBox from './componentes/textbox';
 import LabelGroup from './componentes/labelGroup';
+import CheckboxGroup from './componentes/checkboxGroup';
 import IndicadorDeAcuracia from './indicadorDeAcuracia';
 import { ListaDeElementos, SituacaoFamiliar, ListaDeUFs, PluralidadeNascimentos, OrdemDeNascimento } from './listas'
 import jsonFile from '../resources/municipios.json'
@@ -51,21 +52,15 @@ export default class DadosDemograficos extends React.Component{
     render(){       
         
         return  (
-            <Form horizontal> 
-                <div>
+               <div>
                 <h3>Dados demográficos</h3>
                 <Panel>    
                     
                     <Panel>                               
                         <TextBox  controlId="NomeDaMae" label="Nome da mãe"/>
-                        <TextBox  controlId="NomeDoPai" label="Nome do pai"/>
+                        <TextBox  controlId="NomeDoPai" label="Nome do pai"/>                        
                         <LabelGroup controlId="situacaoFamiliar" label="Situação familiar (convive com)">
-                            <Checkbox >companheiro(a) e filho(s)</Checkbox>
-                            <Checkbox >companheiro(a) com laços conjugais e sem filhos</Checkbox>
-                            <Checkbox >companheiro(a), com filho(s) e/ou outro(s) familiar(es)</Checkbox>
-                            <Checkbox >familiar(es) sem companheiro(a)</Checkbox>
-                            <Checkbox >outra(s) pessoa(s) sem laços consaguíneos e/ou laços conjugais</Checkbox>
-                            <Checkbox >vive só</Checkbox>                
+                            <CheckboxGroup itens={SituacaoFamiliar}></CheckboxGroup>                
                         </LabelGroup>
                     </Panel>                
                     <Panel>
@@ -97,11 +92,11 @@ export default class DadosDemograficos extends React.Component{
                         </LabelGroup>
                     </Panel>
                     <LabelGroup controlId="RacaCor" label="Raça/Cor">
-                        <Checkbox>branca</Checkbox>
-                        <Checkbox>preta</Checkbox>
-                        <Checkbox>parda</Checkbox>
-                        <Checkbox>amarela</Checkbox>
-                        <Checkbox>indígena</Checkbox>
+                        <Radio name="racaCor">branca</Radio>
+                        <Radio name="racaCor">preta</Radio>
+                        <Radio name="racaCor">parda</Radio>
+                        <Radio name="racaCor">amarela</Radio>
+                        <Radio name="racaCor">indígena</Radio>
                     </LabelGroup>
                 </Panel>
                 <Panel>
@@ -157,7 +152,6 @@ export default class DadosDemograficos extends React.Component{
                         </LabelGroup>
                     </Panel>
             </div>
-        </Form>
         )
     }
 }

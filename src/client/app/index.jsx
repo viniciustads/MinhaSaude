@@ -15,27 +15,22 @@ class Banner extends React.Component {
 }
 
 const Identificadores = (
-  <Form horizontal>  
     <DadosIdentificador objeto={identificador} />
-    <Button type="submit">
-      Próximo
-    </Button>
-  </Form>
 );
 
 const ComunicacoesEletronicas = (
-  <Form horizontal>  
+ 
    <DadosComunicacoesEletronicas objeto={comunicacoesEletronicas} />
-  </Form>
 );
 
 const Endereco = (
-  <Form horizontal>  
-   <DadosEndereco objeto={endereco} />
-  </Form>
+   <DadosEndereco objeto={endereco} /> 
 );
 
+
+
 const MenuPrincipal = (
+  <Form horizontal>
   <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" animation={false}>
     <Tab eventKey={1} title="Identificadores">{Identificadores}</Tab>
     <Tab eventKey={2} title="Nomes"><Nomes /></Tab>
@@ -44,6 +39,7 @@ const MenuPrincipal = (
     <Tab eventKey={5} title="Comunicações eletrônicas">{ComunicacoesEletronicas}</Tab>
     <Tab eventKey={6} title="Vínculos"><Vinculos/></Tab>
   </Tabs>
+  </Form>
 );
 
 var identificador = {
