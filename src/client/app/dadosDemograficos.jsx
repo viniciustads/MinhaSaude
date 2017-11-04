@@ -12,7 +12,7 @@ export default class DadosDemograficos extends React.Component{
         return  (
             <Form horizontal> 
                 <div>
-                
+                <h3>Dados demográficos</h3>
                 <Panel>     
                     <Panel>           
                         <TextBox  controlId="NomeDaMae" label="Nome da mãe"/>

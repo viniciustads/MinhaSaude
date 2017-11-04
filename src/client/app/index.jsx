@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import {render} from 'react-dom';
-import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown} from 'react-bootstrap';
+import {Col, Button, ControlLabel, Form, MenuItem, Nav, Navbar, NavItem, NavDropdown, Tabs, Tab} from 'react-bootstrap';
 import DadosIdentificador from './identificadores'
 import Nomes from './nomes'
 import {DadosEndereco} from './endereco'
@@ -14,23 +14,37 @@ class Banner extends React.Component {
     }
 }
 
+const Identificadores = (
+  <Form horizontal>  
+    <DadosIdentificador objeto={identificador} />
+    <Button type="submit">
+      Próximo
+    </Button>
+  </Form>
+);
+
+const ComunicacoesEletronicas = (
+  <Form horizontal>  
+   <DadosComunicacoesEletronicas objeto={comunicacoesEletronicas} />
+  </Form>
+);
+
+const Endereco = (
+  <Form horizontal>  
+   <DadosEndereco objeto={endereco} />
+  </Form>
+);
+
 const MenuPrincipal = (
-  <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <a href="./index.html">Minha Saúde</a>
-      </Navbar.Brand>
-    </Navbar.Header>
-    <Nav>
-      <NavItem eventKey={1} href="#identificadores">Identificadores</NavItem>
-      <NavItem eventKey={2} href="#">Nomes</NavItem>
-      <NavItem eventKey={3} href="#dadosDemograficos">Dados demográficos</NavItem>
-      <NavItem eventKey={4} href="#endereco">Endereços</NavItem>
-      <NavItem eventKey={5} href="#comunicacoesEletronicas">Comunicações eletrônicas</NavItem>
-      <NavItem eventKey={6} href="#">Vínculos</NavItem>
-    </Nav>
-  </Navbar>  
-)
+  <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" animation={false}>
+    <Tab eventKey={1} title="Identificadores">{Identificadores}</Tab>
+    <Tab eventKey={2} title="Nomes"><Nomes /></Tab>
+    <Tab eventKey={3} title="Dados demográficos"><DadosDemograficos/></Tab>
+    <Tab eventKey={4} title="Endereços">{Endereco}</Tab>
+    <Tab eventKey={5} title="Comunicações eletrônicas">{ComunicacoesEletronicas}</Tab>
+    <Tab eventKey={6} title="Vínculos"><Vinculos/></Tab>
+  </Tabs>
+);
 
 var identificador = {
   DadosGerais: {
@@ -57,54 +71,5 @@ var identificador = {
   }
 };
 
-
-
-var endereco = {
-/* preencher depois
-sdsad
-fsf
-af
-ds
-fas
-fsd
-ffsd
-fsd
-fsd
-fs
-
-*/
-};
-
-
-
-
-const Identificadores = (
-  <Form horizontal>  
-    <DadosIdentificador objeto={identificador} />
-    <Button type="submit">
-      Próximo
-    </Button>
-  </Form>
-);
-
-const Endereco = (
-  <Form horizontal>  
-   <DadosEndereco objeto={endereco} />
-  </Form>
-);
-
-const ComunicacoesEletronicas = (
-  <Form horizontal>  
-   <DadosComunicacoesEletronicas objeto={comunicacoesEletronicas} />
-  </Form>
-);
-
-
 render(<Banner/>, document.getElementsByTagName('header')[0]);
 render(MenuPrincipal, document.getElementById('menuPrincipal'));
-render(Identificadores, document.getElementById('identificadores'));
-render(<Nomes />, document.getElementById('nomes'));
-render(<DadosDemograficos/>, document.getElementById('dadosDemograficos'));
-render(Endereco, document.getElementById('endereco'));
-render(ComunicacoesEletronicas, document.getElementById('comunicacoesEletronicas'));
-render(<Vinculos/>, document.getElementById('vinculos'));
