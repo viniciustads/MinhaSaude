@@ -12,7 +12,6 @@ export default class Vinculos extends React.Component{
         return  (
             <div>
             <h3>Vínculos</h3>
-            <Form horizontal> 
                 <Panel>
                     <TextBox  controlId="Identificador" label="Identificador" col={12}/>
                     <LabelGroup label="Ordem de nascimento" col={12}>
@@ -23,7 +22,6 @@ export default class Vinculos extends React.Component{
                     <TextBox  controlId="DataInicio" label="Data inicial" type="date" col={12}/>
                     <TextBox  controlId="DataFim" label="Data final" type="date" col={12}/>
                 </Panel>               
-            </Form>
             </div>
         )
     }
