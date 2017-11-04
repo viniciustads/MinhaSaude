@@ -6,15 +6,46 @@ import TextBox from './componentes/textbox';
 import LabelGroup from './componentes/labelGroup';
 import IndicadorDeAcuracia from './indicadorDeAcuracia';
 import { ListaDeElementos, SituacaoFamiliar, ListaDeUFs, PluralidadeNascimentos, OrdemDeNascimento } from './listas'
+import jsonFile from '../resources/municipios.json'
 
 export default class DadosDemograficos extends React.Component{
-    render(){
+
+    constructor(){
+        super();
+        this.changeEstado = this.changeEstado.bind(this);
+    }
+    componentWillMount() {       
+
+        var municipios = jsonFile.filter(function(el){ return el.uf == "AC";}).map(function(el){ return {value: el.codigo, label: el.municipio}});
+
+        this.setState({ 
+            data: jsonFile,
+            estadoAtual: "Acre",
+            municipiosAtuais: municipios
+         });
+    }
+
+    changeEstado(e){
+        
+        var municipios = this.state.data.filter(function(el){ return el.uf == e.target.value;});
+
+        var listaDeMunicipios = municipios.map(function(el){ return {value: el.codigo, label: el.municipio}});
+
+        this.setState({ 
+            municipiosAtuais: listaDeMunicipios,
+            estadoAtual: municipios[0].estado
+         });
+    }
+
+    render(){       
+        
         return  (
             <Form horizontal> 
                 <div>
                 <h3>Dados demográficos</h3>
-                <Panel>     
-                    <Panel>           
+                <Panel>    
+                    
+                    <Panel>                               
                         <TextBox  controlId="NomeDaMae" label="Nome da mãe"/>
                         <TextBox  controlId="NomeDoPai" label="Nome do pai"/>
                         <LabelGroup controlId="situacaoFamiliar" label="Situação familiar (convive com)">
@@ -83,21 +114,21 @@ export default class DadosDemograficos extends React.Component{
                         <Radio name="nacionalidade" inline>Estrangeiro</Radio>
                     </LabelGroup>
                     <Panel>
-                        <LabelGroup label="Estado de nascimento" col={3}>
-                            <FormControl componentClass="select" required>
+                        <LabelGroup label="Estado de nascimento" col={3} >
+                            <FormControl componentClass="select" required onChange={this.changeEstado}>
                                 <ListaDeElementos lista={ ListaDeUFs } />
                             </FormControl>                            
                         </LabelGroup>
-                        <LabelGroup label="Acre (municípios)" col={3}>
+                        <LabelGroup label={this.state.estadoAtual} col={3} >
                             <FormControl componentClass="select" required>
-                                <ListaDeElementos lista={ ListaDeUFs } />
+                                <ListaDeElementos lista={ this.state.municipiosAtuais } />
                             </FormControl>                            
                         </LabelGroup>
                     </Panel>
                 </Panel>
                 <Panel>
                         <LabelGroup label="Pluralidade de nascimentos" col={3}>
-                            <FormControl componentClass="select" required>
+                            <FormControl componentClass="select" required >
                                 <ListaDeElementos lista={ PluralidadeNascimentos } />
                             </FormControl>                            
                         </LabelGroup>
