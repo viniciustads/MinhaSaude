@@ -7,47 +7,9 @@ import LabelGroup from './componentes/labelGroup';
 import CheckboxGroup from './componentes/checkboxGroup';
 import IndicadorDeAcuracia from './indicadorDeAcuracia';
 import { ListaDeElementos, SituacaoFamiliar, ListaDeUFs, PluralidadeNascimentos, OrdemDeNascimento } from './listas'
-import jsonFile from '../resources/municipios.json'
+import Municipios from './componentes/municipios';
 
 export default class DadosDemograficos extends React.Component{
-
-    constructor(){
-        super();
-        this.changeEstado = this.changeEstado.bind(this);
-    }
-
-    obtenhaMunicipios(data, uf){
-        return data.filter(function(el){ return el.uf == uf;})
-    }
-
-    parseMunicipios(municipios){
-        return municipios.map(function(el){ return {value: el.codigo, label: el.municipio}});
-    }
-
-    componentWillMount() {       
-
-        var municipios = this.obtenhaMunicipios(jsonFile,"AC");       
-
-        var listaMunicipios = this.parseMunicipios(municipios);
-
-        this.setState({ 
-            data: jsonFile,
-            estadoAtual: municipios[0].estado,
-            municipiosAtuais: listaMunicipios
-         });
-    }
-
-    changeEstado(e){        
-        
-        var municipios = this.obtenhaMunicipios(this.state.data, e.target.value);
-
-        var listaDeMunicipios = this.parseMunicipios(municipios);
-
-        this.setState({ 
-            estadoAtual: municipios[0].estado,
-            municipiosAtuais: listaDeMunicipios            
-         });
-    }
 
     render(){       
         
@@ -120,16 +82,7 @@ export default class DadosDemograficos extends React.Component{
                         <Radio name="nacionalidade" inline>Estrangeiro</Radio>
                     </LabelGroup>
                     <Panel>
-                        <LabelGroup label="Estado de nascimento" col={3} >
-                            <FormControl componentClass="select" required onChange={this.changeEstado}>
-                                <ListaDeElementos lista={ ListaDeUFs } />
-                            </FormControl>                            
-                        </LabelGroup>
-                        <LabelGroup label={this.state.estadoAtual} col={3} >
-                            <FormControl componentClass="select" required>
-                                <ListaDeElementos lista={ this.state.municipiosAtuais } />
-                            </FormControl>                            
-                        </LabelGroup>
+                        <Municipios labelEstado='Estado de nascimento'></Municipios>
                     </Panel>
                 </Panel>
                 <Panel>
