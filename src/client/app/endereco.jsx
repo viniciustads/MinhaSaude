@@ -2,17 +2,27 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Col, ControlLabel, FormControl, FormGroup, Panel, Radio, Row, Form, LabelGroup } from 'react-bootstrap';
 import { ListaDeElementos, TipodoEndereco, ListaDeUFs, MunicipiosEndereco, OutrosPaises } from './listas'
+import IndicadorDeAcuracia from './indicadorDeAcuracia';
+import Municipios from './componentes/municipios';
+import Paises from './componentes/paises';
 
 class DadosGeraisDoEndereco extends React.Component {
+
+  constructor(){
+      super();
+  };
+
   render() {
     var dados = this.props.objeto
       ? this.props.objeto
       : {};
     return <Panel>
+      
       <FormGroup controlId="TipodeEndereco" className="col-sm-6">
         <Col sm={12}>
           <label>Tipo do Endereco</label>
         </Col>
+        
         <Col sm={12}>
           <FormControl componentClass="select" required defaultValue={dados.TipodeEndereco}>
             <ListaDeElementos lista={TipodoEndereco} />
@@ -28,30 +38,11 @@ class DadosGeraisDoEndereco extends React.Component {
             <Col sm={12}>
               <FormControl componentClass="input" defaultValue={dados.DataInicial} required type="date" />
             </Col>
-          </FormGroup>
-          <FormGroup controlId="IndicadorAcuraciaInicial" className="col-sm-6">
-            <Col sm={12}>
-              <ControlLabel>Inicador de acurácia</ControlLabel>
-            </Col>
-            <Col sm={12}>
-              <label>Dia </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-            <Col sm={12}>
-              <label>Mês </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-            <Col sm={12}>
-              <label>Ano </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-          </FormGroup>
+          </FormGroup>          
+          
+      <Panel>
+              <IndicadorDeAcuracia controlId="IndicadorAcuraciaInicial"></IndicadorDeAcuracia>
+      </Panel>         
         </Col>
       </Row>
       <Row>
@@ -64,29 +55,9 @@ class DadosGeraisDoEndereco extends React.Component {
               <FormControl componentClass="input" defaultValue={dados.DataFinal} required type="date" />
             </Col>
           </FormGroup>
-          <FormGroup controlId="IndicadorAcuraciaFinal" className="col-sm-6">
-            <Col sm={12}>
-              <ControlLabel>Inicador de acurácia</ControlLabel>
-            </Col>
-            <Col sm={12}>
-              <label>Dia </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-            <Col sm={12}>
-              <label>Mês </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-            <Col sm={12} >
-              <label>Ano </label>{'   '}
-              <Radio name="radioGroup" inline> Acurado </Radio>{' '}
-              <Radio name="radioGroup" inline> Estimado</Radio>{' '}
-              <Radio name="radioGroup" inline>Desconhecido</Radio>
-            </Col>
-          </FormGroup>
+          <Panel>
+              <IndicadorDeAcuracia  controlId="IndicadorAcuraciaFinal"></IndicadorDeAcuracia>
+          </Panel>
         </Col>
       </Row>
 
@@ -98,7 +69,7 @@ class DadosGeraisDoEndereco extends React.Component {
           <Radio name="radioGroupPais" inline>Brasil</Radio>{' '}
           <Radio name="radioGroupPais" inline>Outro</Radio>
         </Col>
-      </FormGroup>
+      </FormGroup>      
     </Panel>
   }
 };
@@ -110,27 +81,7 @@ class Brasil extends React.Component {
       : {};
     return <Panel header="Brasil">
       <Panel>
-        <Col sm={12}>
-          <label>Estado</label>
-        </Col>
-        <Col sm={12}>
-          <FormGroup controlId="EstadoBrasil" className="col-sm-6" label="Estado">
-            <FormControl componentClass="select" placeholder="select" defaultValue={dados.EstadoBrasil}>
-              <ListaDeElementos lista={ListaDeUFs} />
-            </FormControl>
-          </FormGroup>
-        </Col>
-        <Col sm={12}>
-          <label>Município</label>
-        </Col>
-        <Col sm={12}>
-          <FormGroup controlId="MunicipioBrasil" className="col-sm-6" label="Municipio">
-            <FormControl componentClass="select" placeholder="select" defaultValue={dados.MunicipiosBrasil}>
-              <ListaDeElementos lista={MunicipiosEndereco} />
-            </FormControl>
-          </FormGroup>
-        </Col>
-
+        <Municipios labelEstado='Estado'></Municipios>
       </Panel>
 
       <Panel>
@@ -138,13 +89,8 @@ class Brasil extends React.Component {
           <label>País</label>
         </Col>
         <Col sm={12}>
-          <FormGroup controlId="OutrosPaises" className="col-sm-6" label="Municipio">
-            <FormControl componentClass="select" placeholder="select" defaultValue={dados.OutrosPaises}>
-              <ListaDeElementos lista={OutrosPaises} />
-            </FormControl>
-          </FormGroup>
+        <Paises labelPaises='País'></Paises>
         </Col>
-
         <Col sm={12}>
           <label>Estado</label>
         </Col>
@@ -199,8 +145,6 @@ class Brasil extends React.Component {
           <FormControl componentClass="input" type="text" defaultValue={dados.DadosGenericosPaises} />
         </Col>
       </FormGroup>
-
-
     </Panel>
   }
 };
